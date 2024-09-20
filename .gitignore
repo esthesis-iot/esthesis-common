@@ -1,0 +1,6 @@
+.history
+!/.idea/runConfigurations
+**/*.iml
+**/target
+.idea/
+**/pom.xml.versionsBackup
