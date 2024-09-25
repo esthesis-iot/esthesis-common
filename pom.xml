@@ -6,11 +6,11 @@
 
   <parent>
     <groupId>esthesis</groupId>
-    <artifactId>esthesis-bom-java</artifactId>
+    <artifactId>esthesis-bom</artifactId>
     <version>1.0.0-SNAPSHOT</version>
   </parent>
 
-  <artifactId>esthesis-common-java</artifactId>
+  <artifactId>esthesis-common</artifactId>
   <version>1.0.0-SNAPSHOT</version>
 
   <properties>

@@ -1,6 +1,6 @@
-package esthesis.common.banner;
+package esthesis.core.common.banner;
 
-import esthesis.common.git.GitUtil;
+import esthesis.core.common.git.GitUtil;
 
 public class BannerUtil {
 
@@ -9,8 +9,8 @@ public class BannerUtil {
 
 	//@formatter:off
   private static final String BANNER = """
-***************************************************
-https://esthes.is              esthesis@eurodyn.com
+****************************************************
+https://esthes.is               esthesis@eurodyn.com
 
            _   _               _       _       _
   ___  ___| |_| |__   ___  ___(_)___  (_) ___ | |_
@@ -32,7 +32,8 @@ https://esthes.is              esthesis@eurodyn.com
 
 		// Prepare version information.
 		GitUtil gitUtil = new GitUtil();
-		String buildTime =	gitUtil.getGitProperty(GitUtil.GIT_PROPERTY_BUILD_TIME).replaceAll("(.)(?=..$)", "$1:");
+		String buildTime =	gitUtil.getGitProperty(GitUtil.GIT_PROPERTY_BUILD_TIME)
+				.replaceAll("(.)(?=..$)", "$1:");
 		String localTime = java.time.OffsetDateTime.now().format(
 				java.time.format.DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ssXXX"));
 
@@ -45,6 +46,6 @@ https://esthes.is              esthesis@eurodyn.com
 			System.out.println("Local time: " + localTime);
 		}
 
-		System.out.println("***************************************************\n");
+		System.out.println("****************************************************\n");
 	}
 }
