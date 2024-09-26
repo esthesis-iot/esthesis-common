@@ -28,4 +28,56 @@
       <artifactId>slf4j-api</artifactId>
     </dependency>
   </dependencies>
+
+	<profiles>
+		<profile>
+			<activation>
+				<property>
+					<name>cyclonedx-bom</name>
+				</property>
+			</activation>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<artifactId>cyclonedx-maven-plugin</artifactId>
+							<configuration>
+								<includeBomSerialNumber>true</includeBomSerialNumber>
+								<includeCompileScope>true</includeCompileScope>
+								<includeLicenseText>false</includeLicenseText>
+								<includeProvidedScope>true</includeProvidedScope>
+								<includeRuntimeScope>true</includeRuntimeScope>
+								<includeSystemScope>true</includeSystemScope>
+								<includeTestScope>false</includeTestScope>
+								<outputFormat>xml</outputFormat>
+								<outputName>bom</outputName>
+								<outputReactorProjects>false</outputReactorProjects>
+								<projectType>application</projectType>
+								<schemaVersion>1.4</schemaVersion>
+							</configuration>
+							<executions>
+								<execution>
+									<goals>
+										<goal>makeAggregateBom</goal>
+									</goals>
+									<phase>package</phase>
+								</execution>
+							</executions>
+							<groupId>org.cyclonedx</groupId>
+							<inherited>false</inherited>
+							<version>2.7.9</version>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+				<plugins>
+					<plugin>
+						<artifactId>cyclonedx-maven-plugin</artifactId>
+						<groupId>org.cyclonedx</groupId>
+						<inherited>false</inherited>
+					</plugin>
+				</plugins>
+			</build>
+			<id>cyclonedx-bom</id>
+		</profile>
+	</profiles>
 </project>
