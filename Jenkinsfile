@@ -123,11 +123,11 @@ pipeline {
             }
         }
     }
-    post {
-        changed {
-            emailext subject: '$DEFAULT_SUBJECT',
-                body: '$DEFAULT_CONTENT',
-                to: '12133724.eurodynlu.onmicrosoft.com@emea.teams.ms'
-        }
-    }
+    // post {
+    //     changed {
+    //         emailext subject: '$DEFAULT_SUBJECT',
+    //             body: '$DEFAULT_CONTENT',
+    //             to: '12133724.eurodynlu.onmicrosoft.com@emea.teams.ms'
+    //     }
+    // }
 }
