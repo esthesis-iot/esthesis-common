@@ -1,6 +1,6 @@
-package esthesis.core.common.banner;
+package esthesis.common.banner;
 
-import esthesis.core.common.git.GitUtil;
+import esthesis.common.git.GitUtil;
 
 public class BannerUtil {
 

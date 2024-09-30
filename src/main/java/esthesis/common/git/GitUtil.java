@@ -1,4 +1,4 @@
-package esthesis.core.common.git;
+package esthesis.common.git;
 
 import java.util.Properties;
 import lombok.Getter;
