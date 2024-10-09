@@ -14,11 +14,33 @@
   <version>1.0.0-SNAPSHOT</version>
 
   <properties>
-    <maven.compiler.release>21</maven.compiler.release>
-    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.source>21</maven.compiler.source>
+		<maven.compiler.target>21</maven.compiler.target>
+		<maven.compiler.release>21</maven.compiler.release>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
 
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>quarkus-maven-plugin</artifactId>
+				<groupId>io.quarkus.platform</groupId>
+			</plugin>
+		</plugins>
+	</build>
+
   <dependencies>
+		<!-- QUARKUS -->
+		<dependency>
+			<groupId>io.quarkus</groupId>
+			<artifactId>quarkus-avro</artifactId>
+		</dependency>
+    <dependency>
+      <groupId>io.quarkus</groupId>
+      <artifactId>quarkus-hibernate-validator</artifactId>
+    </dependency>
+
     <!-- THIRD PARTY -->
     <dependency>
       <groupId>org.projectlombok</groupId>
@@ -27,10 +49,6 @@
     <dependency>
       <groupId>org.slf4j</groupId>
       <artifactId>slf4j-api</artifactId>
-    </dependency>
-    <dependency>
-      <artifactId>quarkus-hibernate-validator</artifactId>
-      <groupId>io.quarkus</groupId>
     </dependency>
   </dependencies>
 
