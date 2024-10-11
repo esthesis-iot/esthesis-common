@@ -65,7 +65,7 @@ pipeline {
                         sh '''
                             git config --global user.email "devops-d2@eurodyn.com"
                             git config --global user.name "$Username"
-                            git clone https://$Username:$Password@github.com/esthesis-iot/esthesis-bom
+                            git clone https://$Password@github.com/esthesis-iot/esthesis-bom
                         '''
                     }
                 }
