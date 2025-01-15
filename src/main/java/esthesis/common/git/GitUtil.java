@@ -31,7 +31,7 @@ public class GitUtil {
     if (initialised) {
       return properties.getProperty(gitProperty);
     } else {
-      return "{not available}";
+      return null;
     }
   }
 
