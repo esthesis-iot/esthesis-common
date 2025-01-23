@@ -1,10 +1,7 @@
 package esthesis.common.exception;
 
 /**
- * A generic exception representing a "data has null value, but is required"
- * condition.
- *
- * @author European Dynamics SA
+ * A generic exception representing a "data has null value, but is required" condition.
  */
 public class QValueIsRequiredException extends QException {
 

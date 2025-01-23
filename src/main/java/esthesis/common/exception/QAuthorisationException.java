@@ -1,13 +1,10 @@
 package esthesis.common.exception;
 
 /**
- * A generic exception superclass to facilitate marking of authorisation-related
- * exception.
+ * A generic exception superclass to facilitate marking of authorisation-related exception.
  */
 @SuppressWarnings("squid:MaximumInheritanceDepth")
 public class QAuthorisationException extends QSecurityException {
-
-  private static final long serialVersionUID = 3887709297788547031L;
 
   public QAuthorisationException() {
     super();

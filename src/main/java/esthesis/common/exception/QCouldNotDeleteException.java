@@ -1,10 +1,7 @@
 package esthesis.common.exception;
 
 /**
- * A generic exception representing a "can not delete the given object"
- * condition.
- *
- * @author European Dynamics SA
+ * A generic exception representing a "can not delete the given object" condition.
  */
 public class QCouldNotDeleteException extends QException {
 

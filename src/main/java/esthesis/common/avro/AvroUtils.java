@@ -10,6 +10,9 @@ import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * Utility class to work with data expressed in Avro messages.
+ */
 @Slf4j
 @ApplicationScoped
 public class AvroUtils {

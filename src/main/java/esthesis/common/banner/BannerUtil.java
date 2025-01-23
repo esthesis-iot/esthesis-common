@@ -3,6 +3,9 @@ package esthesis.common.banner;
 import esthesis.common.git.GitUtil;
 import org.apache.commons.lang3.StringUtils;
 
+/**
+ * Utility class to display a common banner in components.
+ */
 public class BannerUtil {
 
   private BannerUtil() {

@@ -2,8 +2,6 @@ package esthesis.common.exception;
 
 /**
  * A generic exception representing an "entity does not exist in the system" condition.
- *
- * @author European Dynamics SA
  */
 public class QDoesNotExistException extends QException {
 

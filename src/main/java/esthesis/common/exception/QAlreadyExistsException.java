@@ -1,10 +1,7 @@
 package esthesis.common.exception;
 
 /**
- * A generic exception representing an "entity already exists in the system"
- * condition.
- *
- * @author European Dynamics SA
+ * A generic exception representing an "entity already exists in the system" condition.
  */
 public class QAlreadyExistsException extends QException {
 

@@ -15,6 +15,9 @@ import lombok.Singular;
 import lombok.experimental.Accessors;
 import org.hibernate.validator.constraints.Length;
 
+/**
+ * Represents the request to register an agent in CORE.
+ */
 @Data
 @Builder
 @NoArgsConstructor
@@ -23,30 +26,30 @@ import org.hibernate.validator.constraints.Length;
 @Accessors(chain = true)
 public class AgentRegistrationRequest {
 
-	// The hardware ID of the device. It can only contain alphanumeric values, hyphens, and underscores.
-	@NotBlank
-	@Length(min = 3, max = 512)
-	@Pattern(regexp = "^[a-zA-Z0-9_-]+$", message = "Hardware ID must contain only alphanumeric characters, hyphens, and underscores.")
-	private String hardwareId;
+  // The hardware ID of the device. It can only contain alphanumeric values, hyphens, and underscores.
+  @NotBlank
+  @Length(min = 3, max = 512)
+  @Pattern(regexp = "^[a-zA-Z0-9_-]+$", message = "Hardware ID must contain only alphanumeric characters, hyphens, and underscores.")
+  private String hardwareId;
 
-	// Comma-separated list of tag names.
-	private String tags;
+  // Comma-separated list of tag names.
+  private String tags;
 
-	// The type of the device being registered.
-	@NotNull
-	private EsthesisCommonConstants.Device.Type type;
+  // The type of the device being registered.
+  @NotNull
+  private EsthesisCommonConstants.Device.Type type;
 
-	// The optional registration secret, when the platform operates in that mode.
-	private String registrationSecret;
+  // The optional registration secret, when the platform operates in that mode.
+  private String registrationSecret;
 
-	// A comma-separated list of key-value-type tuples in the form of:
-	// key1=val1;type1,key2=val2;type2,etc.
-	// The type of the attribute is optional and if not defined the system will try to determine
-	// what is the most appropriate type to use. If the type is defined, it must be one of the
-	// values provided by AppConstants.Device.Attribute.Type.
-	private String attributes;
+  // A comma-separated list of key-value-type tuples in the form of:
+  // key1=val1;type1,key2=val2;type2,etc.
+  // The type of the attribute is optional and if not defined the system will try to determine
+  // what is the most appropriate type to use. If the type is defined, it must be one of the
+  // values provided by AppConstants.Device.Attribute.Type.
+  private String attributes;
 
-	// Capabilities supported by this device.
-	@Singular
-	private List<Capability> capabilities;
+  // Capabilities supported by this device.
+  @Singular
+  private List<Capability> capabilities;
 }

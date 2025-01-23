@@ -9,6 +9,9 @@ import java.util.stream.Stream;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.math.NumberUtils;
 
+/**
+ * A utility class for data manipulation.
+ */
 public class DataUtils {
 
   // A list of value types that cab detected.

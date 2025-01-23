@@ -4,12 +4,8 @@ import java.io.Serializable;
 
 /**
  * Parent exception type.
- *
- * @author European Dynamics SA
  */
 public abstract class QException extends RuntimeException implements Serializable {
-
-  private static final long serialVersionUID = 4808786528779863568L;
 
   protected QException() {
   }

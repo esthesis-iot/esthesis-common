@@ -1,9 +1,7 @@
 package esthesis.common.exception;
 
 /**
- * A generic exception representing an "mismatch" condition.
- *
- * @author European Dynamics SA
+ * A generic exception representing a "mismatch" condition.
  */
 public class QMismatchException extends QException {
 

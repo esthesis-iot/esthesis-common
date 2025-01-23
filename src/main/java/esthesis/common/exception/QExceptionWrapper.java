@@ -2,8 +2,6 @@ package esthesis.common.exception;
 
 /**
  * A generic exception wrapper.
- *
- * @author European Dynamics SA
  */
 public class QExceptionWrapper extends QException {
 

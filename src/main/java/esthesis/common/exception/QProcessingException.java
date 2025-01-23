@@ -1,9 +1,7 @@
 package esthesis.common.exception;
 
 /**
- * A exception representing a generic processing error.
- *
- * @author European Dynamics SA
+ * An exception representing a generic processing error.
  */
 public class QProcessingException extends QException {
 

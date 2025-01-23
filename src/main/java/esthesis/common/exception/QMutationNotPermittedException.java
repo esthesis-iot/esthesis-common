@@ -2,8 +2,6 @@ package esthesis.common.exception;
 
 /**
  * A generic exception representing an error while trying to mutate data.
- *
- * @author European Dynamics SA
  */
 public class QMutationNotPermittedException extends QException {
 

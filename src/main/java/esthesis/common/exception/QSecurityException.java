@@ -5,8 +5,6 @@ package esthesis.common.exception;
  */
 public class QSecurityException extends QException {
 
-  private static final long serialVersionUID = -8412287217789350614L;
-
   public QSecurityException() {
     super();
   }

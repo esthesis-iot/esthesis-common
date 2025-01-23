@@ -2,8 +2,6 @@ package esthesis.common.exception;
 
 /**
  * A generic exception representing a "entity is disabled" condition.
- *
- * @author European Dynamics SA
  */
 public class QDisabledException extends QException {
 

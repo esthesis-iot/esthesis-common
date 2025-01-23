@@ -2,8 +2,6 @@ package esthesis.common.exception;
 
 /**
  * A generic exception representing a "can not save the object" condition.
- *
- * @author European Dynamics SA
  */
 public class QCouldNotSaveException extends QException {
 

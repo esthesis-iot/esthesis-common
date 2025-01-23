@@ -6,6 +6,9 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import lombok.experimental.Accessors;
 
+/**
+ * Represents the response to register an agent in CORE.
+ */
 @Data
 @NoArgsConstructor
 @EqualsAndHashCode
