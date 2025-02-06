@@ -69,7 +69,7 @@ https://esthes.is               esthesis@eurodyn.com
     System.out.println("OS Version    : " + System.getProperty("os.version"));
     System.out.println("OS Arch       : " + System.getProperty("os.arch"));
     System.out.println("Java Version  : " + System.getProperty("java.version"));
-    System.out.println("User Name     : " + System.getProperty("user.name"));
+    System.out.println("User          : " + System.getProperty("user.name"));
 
     System.out.println("****************************************************\n");
   }
