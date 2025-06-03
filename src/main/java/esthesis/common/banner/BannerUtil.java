@@ -1,11 +1,13 @@
 package esthesis.common.banner;
 
 import esthesis.common.git.GitUtil;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
 
 /**
  * Utility class to display a common banner in components.
  */
+@Slf4j
 public class BannerUtil {
 
   private BannerUtil() {
@@ -70,6 +72,11 @@ https://esthes.is               esthesis@eurodyn.com
     System.out.println("OS Arch       : " + System.getProperty("os.arch"));
     System.out.println("Java Version  : " + System.getProperty("java.version"));
     System.out.println("User          : " + System.getProperty("user.name"));
+    if (log.isDebugEnabled()) {
+    System.out.println("Logging       : Debug logging enabled.");
+    } else if (log.isTraceEnabled()) {
+    System.out.println("Logging       : Trace logging enabled.");
+    }
 
     System.out.println("****************************************************\n");
   }
