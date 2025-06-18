@@ -5,6 +5,7 @@ import esthesis.common.data.DataUtils.ValueType;
 import esthesis.common.exception.QMismatchException;
 import jakarta.enterprise.context.ApplicationScoped;
 import java.time.Instant;
+import java.time.format.DateTimeParseException;
 import java.util.Arrays;
 import java.util.UUID;
 import lombok.extern.slf4j.Slf4j;
@@ -123,7 +124,7 @@ public class AvroUtils {
 
     // Split the line into category, measurements, and optional timestamp.
     @SuppressWarnings("java:S5998") String[] parts = line.split(
-        " +(?=((.*?(?<!\\\\)\"){2})*[^\"]*$)");
+        " +(?=(?:[^']*'[^']*')*[^']*$)");
 
     if (parts.length < 2) {
       throw new QMismatchException(
@@ -154,9 +155,16 @@ public class AvroUtils {
           ValueData.newBuilder().setName(measurementParts[0])).build();
     }).toList());
 
-    // Set the timestamp, if available.
+    // Validate and set the timestamp, if available.
     if (parts.length == 3) {
-      payloadBuilder.setTimestamp(parts[2]);
+      String timestamp = parts[2];
+      try {
+        Instant.parse(timestamp);
+      } catch (DateTimeParseException e) {
+        throw new QMismatchException("Invalid timestamp in line '{}': must be a valid ISO-8601 timestamp in UTC.",
+                StringUtils.abbreviate(line, MESSAGE_LOG_ABBREVIATION_LENGTH));
+      }
+      payloadBuilder.setTimestamp(timestamp);
     } else {
       payloadBuilder.setTimestamp(Instant.now().toString());
     }
