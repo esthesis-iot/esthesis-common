@@ -110,11 +110,17 @@ pipeline {
             steps{
                 container (name: 'esthesis-common-builder') {
                     sh '''
-                        echo '{"project": "66912788-4da1-42b4-ace4-9f7c467b9b77", "bom": "'"$(cat target/bom.xml | base64 -w 0)"'"}' > payload.json
-                    '''
-                    sh '''
-                        curl -X "PUT" ${DEPENDENCY_TRACK_URL} -H 'Content-Type: application/json' -H 'X-API-Key: '${DEPENDENCY_TRACK_API_KEY} -d @payload.json
-                    '''
+                        DT_BRANCH=$(echo "${BRANCH_NAME:-unknown}" | tr "/ " "__")
+                
+                        curl -sS -X POST "${DEPENDENCY_TRACK_URL}" \
+                          -H "X-Api-Key: ${DEPENDENCY_TRACK_API_KEY}" \
+                          -F "autoCreate=true" \
+                          -F "parentName=esthesis-common" \
+                          -F "parentVersion=parent" \
+                          -F "projectName=esthesis-common-device" \
+                          -F "projectVersion=${DT_BRANCH}" \
+                          -F "bom=@target/bom.xml"
+                      '''
                 }
             }
         }
